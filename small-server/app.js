@@ -1,11 +1,5 @@
-require("dotenv").config()
-const express = require("express")
-const morgan = require("morgan")
-const bodyParser = require("body-parser")
-const cors = require("cors") 
-const { initDb } = require("./db/sequelize")
-const createProfile = require("./routes/profile/createProfile")
-const app = express()
+const express = require('express')
+const app = express();
 const port = 3000
 
 
@@ -29,6 +23,19 @@ app.get("/", (req, res) => {
 })
 
 
-app.listen(port, () => {
-  console.log(`Notre app tourne sur le port ${port}`)
+// serveur 2 :
+
+const app2 = express();
+
+const port2 = 4000;
+
+app2.get('/apropos', (req, res) => {
+  res.send('Deuxieme serveur avec port 4000');
+});
+
+
+app2.listen(port2, () => {
+  console.log(`Serveur 2 lancé sur le port : ${port2}`);
 })
+
+/// app.method(path, handler)
