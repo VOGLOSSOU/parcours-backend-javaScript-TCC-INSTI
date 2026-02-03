@@ -1,0 +1,19 @@
+### Test POST - Créer un Profile
+POST http://localhost:3000/api/profiles
+Content-Type: application/json
+
+{
+  "firstName": "Nathan",
+  "country": "Bénin",
+  "city": "Cotonou",
+  "domain": "tech",
+  "availability": "full-time",
+  "contactMethod": "email",
+  "ageRange": "26-35",
+  "gender": "male",
+  "technologies": ["JavaScript", "Node.js", "React"],
+  "description": "Développeur full-stack expérimenté"
+}
+
+### Test GET - Vérifier que l'API marche
+GET http://localhost:3000/
