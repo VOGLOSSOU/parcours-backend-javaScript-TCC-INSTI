@@ -17,6 +17,8 @@ initDb().then(() => {
 // Routes
 require("./routes/profile/createProfile")(app);
 require("./routes/profile/getAllProfiles")(app);
+require("./routes/admin/createAdmin")(app);
+require("./routes/admin/getAllAdmins")(app);
 
 app.get("/", (req, res) => {
   res.json({ message: "L' api marche !" });

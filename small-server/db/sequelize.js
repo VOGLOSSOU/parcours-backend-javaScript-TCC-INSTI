@@ -5,6 +5,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 // 1) Import des factory functions de tes modèles
 const ProfileModel    = require('../models/profile');
+const AdminModel      = require('../models/admin');
 
 // 2) Création de la connexion Sequelize
 const sequelize = new Sequelize(
@@ -21,6 +22,7 @@ const sequelize = new Sequelize(
 
 // 3) Initialisation de chaque modèle
 const Profile    = ProfileModel(sequelize, DataTypes);
+const Admin      = AdminModel(sequelize, DataTypes);
 
 const initDb = async () => {
   try {
@@ -36,5 +38,6 @@ const initDb = async () => {
 module.exports = {
   sequelize,
   initDb,
-  Profile
+  Profile,
+  Admin
 };
